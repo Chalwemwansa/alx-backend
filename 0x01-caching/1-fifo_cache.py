@@ -16,7 +16,7 @@ class FIFOCache(BaseCaching):
     def put(self, key, item):
         """the method adds an element to the cache and
         replaces one based on which one came in first"""
-        if (key or item) is None:
+        if key is None or item is None:
             return
         if key not in self.__cache_list:
             self.__cache_list.insert(0, key)

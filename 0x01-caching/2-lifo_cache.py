@@ -15,7 +15,7 @@ class LIFOCache(BaseCaching):
     def put(self, key, item):
         """function that adds an element to the cache_data in
         the super class"""
-        if (key or item) is None:
+        if key is None or item is None:
             return
         if key not in self.__cache_list:
             self.__cache_list.append(key)

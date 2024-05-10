@@ -16,7 +16,7 @@ class MRUCache(BaseCaching):
     def put(self, key, item):
         """implements the mru typ of caching when the list is greater
         than the max size"""
-        if (key or item) is None:
+        if key is None or item is None:
             return
         if key not in self.__cache_list:
             self.__cache_list.append(key)
