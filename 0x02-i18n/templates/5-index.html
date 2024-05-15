@@ -1,0 +1,16 @@
+<!-- index.html template used in the flask web app-->
+<!DOCTYPE html>
+<HTML>
+    <HEAD>
+        <META charset="UTF-8">
+        <TITLE>{{ _('home_title') }}</TITLE>
+    </HEAD>
+    <BODY>
+        <H1>{{ _('home_header') }}</H1>
+        {% if g.user is none %}
+            <P>{{ _('not_logged_in') }}</P>
+        {% else %}
+            <P>{{ _('logged_in_as', username=g.user.get('name')) }}</P>
+        {% endif %}
+    </BODY>
+</HTML>
