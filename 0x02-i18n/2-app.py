@@ -20,7 +20,7 @@ babel: Babel = Babel(app)
 @babel.localeselector
 def get_locale_func() -> str:
     """function sets the locales to be used in our flask web app"""
-    lang: str = request.accept_languages.best_match(app.config.LANGUAGES)
+    lang: str = request.accept_languages.best_match(Config.LANGUAGES)
     return lang
 
 
